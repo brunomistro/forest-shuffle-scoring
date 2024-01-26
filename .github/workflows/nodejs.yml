@@ -51,3 +51,6 @@ jobs:
 
       - name: Run tests
         run: npm run test
+
+      - name: Check translations
+        run: npm run i18n:extract && npm run i18n:check

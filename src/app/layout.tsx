@@ -5,6 +5,8 @@ import React from "react";
 import { CssBaseline } from "@mui/joy";
 import { CssVarsProvider } from "@mui/joy/styles";
 
+import ServerIntlProvider from "@/containers/ServerIntlProvider";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -20,10 +22,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <CssVarsProvider>
-          <CssBaseline />
-          {children}
-        </CssVarsProvider>
+        <ServerIntlProvider>
+          <CssVarsProvider defaultMode="system">
+            <CssBaseline />
+            {children}
+          </CssVarsProvider>
+        </ServerIntlProvider>
       </body>
     </html>
   );

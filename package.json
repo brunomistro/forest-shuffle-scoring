@@ -9,6 +9,8 @@
     "lint": "next lint",
     "format": "prettier --write '**/*.{js,jsx,cjs,ts,tsx,css,md,json}'",
     "format:check": "prettier --check '**/*.{js,jsx,cjs,ts,tsx,css,md,json}'",
+    "i18n:extract": "formatjs extract 'src/**/*.{js,jsx,ts,tsx}' --out-file messages.json && formatjs compile messages.json --out-file src/translations/en.json && echo '' >> src/translations/en.json && rm messages.json",
+    "i18n:check": "ts-node scripts/checkTranslations.ts",
     "test": "jest"
   },
   "dependencies": {
@@ -19,7 +21,7 @@
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18",
-    "react-intl": "^6.5.5",
+    "react-intl": "^6.6.2",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
@@ -27,12 +29,14 @@
     "@testing-library/jest-dom": "^6.2.0",
     "@testing-library/react": "^14.1.2",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@types/glob": "^8.1.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@types/uuid": "^9.0.7",
     "@typescript-eslint/eslint-plugin": "^6.16.0",
     "@typescript-eslint/parser": "^6.16.0",
+    "colors": "^1.4.0",
     "eslint": "^8.56.0",
     "eslint-config-next": "14.0.4",
     "eslint-config-prettier": "^9.1.0",
