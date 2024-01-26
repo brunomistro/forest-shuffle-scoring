@@ -7,5 +7,6 @@ module.exports = {
     "plugin:import/recommended",
     "plugin:import/react",
     "plugin:import/typescript",
+    "plugin:storybook/recommended",
   ],
 };

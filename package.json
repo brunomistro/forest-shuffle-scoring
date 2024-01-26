@@ -11,6 +11,8 @@
     "format:check": "prettier --check '**/*.{js,jsx,cjs,ts,tsx,css,md,json}'",
     "i18n:extract": "formatjs extract 'src/**/*.{js,jsx,ts,tsx}' --out-file messages.json && formatjs compile messages.json --out-file src/translations/en.json && echo '' >> src/translations/en.json && rm messages.json",
     "i18n:check": "ts-node scripts/checkTranslations.ts",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
     "test": "jest"
   },
   "dependencies": {
@@ -26,6 +28,14 @@
   },
   "devDependencies": {
     "@formatjs/cli": "^6.2.4",
+    "@storybook/addon-essentials": "^7.6.10",
+    "@storybook/addon-interactions": "^7.6.10",
+    "@storybook/addon-links": "^7.6.10",
+    "@storybook/addon-themes": "^7.6.10",
+    "@storybook/blocks": "^7.6.10",
+    "@storybook/nextjs": "^7.6.10",
+    "@storybook/react": "^7.6.10",
+    "@storybook/test": "^7.6.10",
     "@testing-library/jest-dom": "^6.2.0",
     "@testing-library/react": "^14.1.2",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
@@ -42,9 +52,12 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-prettier": "^5.1.2",
+    "eslint-plugin-storybook": "^0.6.15",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "prettier": "^3.1.1",
+    "storybook": "^7.6.10",
+    "storybook-react-intl": "^2.0.10",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   }
