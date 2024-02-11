@@ -1,6 +1,5 @@
-import { v4 as uuidv4 } from "uuid";
-
 import { DEFAULT_MODIFIERS } from "@/lib/cards/dwellers/modifiers";
+import { generateId } from "@/lib/cards/factory";
 import {
   CardType,
   DwellerCard,
@@ -33,7 +32,7 @@ export const createFakeDweller: (
     modifiers = DEFAULT_MODIFIERS,
   } = {},
 ) => ({
-  id: id ?? uuidv4(),
+  id: id ?? generateId(),
   name: "FAKE_DWELLER",
   types,
   treeSymbol,
@@ -53,7 +52,7 @@ export const createFakeDwellers: (
 export const createFakeTree: (
   optionalArgs?: FakeTreeOptionalArgs,
 ) => TreeCard = ({ treeSymbol } = {}) => ({
-  id: uuidv4(),
+  id: generateId(),
   name: "FAKE_TREE",
   types: [CardType.Tree],
   treeSymbol,

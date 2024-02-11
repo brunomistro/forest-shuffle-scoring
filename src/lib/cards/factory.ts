@@ -16,6 +16,8 @@ import {
   TreeCardBlueprint,
 } from "./types";
 
+export const generateId = () => uuidv4();
+
 export const createDweller = (
   blueprint: DwellerCardBlueprint,
   variant: DwellerVariant,
@@ -27,9 +29,8 @@ export const createDweller = (
     throw new TypeError("The variant is invalid");
   }
 
-  const id = uuidv4();
   const dweller: DwellerCard = {
-    id,
+    id: generateId(),
     name: blueprint.name,
     types: blueprint.types,
     treeSymbol: variant.treeSymbol,
@@ -45,9 +46,8 @@ export const createTree = (blueprint: TreeCardBlueprint): TreeCard => {
     throw new TypeError("The blueprint must be a tree blueprint");
   }
 
-  const id = uuidv4();
   const tree: TreeCard = {
-    id,
+    id: generateId(),
     name: blueprint.name,
     types: blueprint.types,
     treeSymbol: blueprint.treeSymbol,

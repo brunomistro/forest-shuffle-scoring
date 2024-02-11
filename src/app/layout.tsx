@@ -6,6 +6,7 @@ import { CssBaseline } from "@mui/joy";
 import { CssVarsProvider } from "@mui/joy/styles";
 
 import ServerIntlProvider from "@/containers/ServerIntlProvider";
+import { GameContextProvider } from "@/contexts/GameContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,7 +26,7 @@ export default function RootLayout({
         <ServerIntlProvider>
           <CssVarsProvider defaultMode="system">
             <CssBaseline />
-            {children}
+            <GameContextProvider>{children}</GameContextProvider>
           </CssVarsProvider>
         </ServerIntlProvider>
       </body>

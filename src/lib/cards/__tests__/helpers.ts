@@ -1,7 +1,5 @@
-import { v4 as uuidv4 } from "uuid";
-
 import * as Dwellers from "@/lib/cards/dwellers";
-import { createDweller, createTree } from "@/lib/cards/factory";
+import { createDweller, createTree, generateId } from "@/lib/cards/factory";
 import { getDwellersOfTree } from "@/lib/cards/helpers";
 import * as Trees from "@/lib/cards/trees";
 
@@ -19,7 +17,7 @@ import { createFakeTree } from "./fake";
 export const generateCardIds = (count: number) =>
   Array(count)
     .fill(0)
-    .map(() => uuidv4());
+    .map(() => generateId());
 
 export const createAllDwellers = (blueprint: DwellerCardBlueprint) =>
   blueprint.variants
