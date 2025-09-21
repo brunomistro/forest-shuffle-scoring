@@ -11,7 +11,7 @@ const gameBox = GameBox.Base;
 
 const blueprint: DwellerCardBlueprint = {
   name,
-  types: [CardType.Amphibian],
+  types: [CardType.Mushroom],
   cost: 2,
   isPartOfDeck: true,
   variants: [
